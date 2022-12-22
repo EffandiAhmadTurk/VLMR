@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Home from '.';
 import Characters from './Home';
+import Pagination from './Pagination';
 interface IDatePickerProps {
   applicationMode?: boolean;
   value: string;
@@ -46,8 +47,19 @@ const charList = characters.map((char : any) => <Characters  key={Math.floor(Mat
   <p className="mt-2 text-sm text-green-600 dark:text-green-500"><span className="font-medium">Alright!</span> Character Name available!</p>
 </div>
   </div>
+  <div className=''>
+    <Pagination nextPage={nextPageUrl ? nextPage : null} prevPage={prevPageUrl ? prevPage : null} goToPage={goToPage} pages={pages} />
+  </div>
        <div className="max-w-[700px]  overflow-y-auto my-2 gap-x-32 gap-y-2 bg-gray-700 mx-auto grid grid-cols-2">
 {charList}
+  </div>
+  <div className=''>
+  <Pagination
+    nextPage={nextPageUrl ? nextPage : null}
+    prevPage={prevPageUrl ? prevPage : null}
+    goToPage={goToPage}
+    pages={pages}
+  />
   </div>
     </div>
   )
