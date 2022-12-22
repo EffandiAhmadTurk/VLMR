@@ -36,7 +36,7 @@ function nextPage() {
   setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
   }
 if (loading) return "Loading..."
-const charList = characters.map((char : any) => <Characters key={Math.floor(Math.random() * 10000)} name={char.name} img={"src"} />)
+const charList = characters.map((char : any) => <Characters key={Math.floor(Math.random() * 10000)} name={char.name} img={char.image} />)
   return (
     <div>
        <div className="char-cards">

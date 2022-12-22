@@ -17,7 +17,7 @@ export default function Home({data}: {data:any}) {
      </Head>
 
      <p>
-       <div className='bg-black  py-2 flex justify-center text-white text-bold text-2xl'>Rick and Morty</div>
+       <div className='bg-black  py-8 flex justify-center text-white text-bold text-2xl'>Rick and Morty</div>
       <Blogs />
      </p>
    </div>
