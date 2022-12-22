@@ -36,10 +36,17 @@ function nextPage() {
   setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
   }
 if (loading) return "Loading..."
-const charList = characters.map((char : any) => <Characters key={Math.floor(Math.random() * 10000)} name={char.name} img={char.image} />)
+const charList = characters.map((char : any) => <Characters  key={Math.floor(Math.random() * 990000)} name={char.name} img={char.image} />)
   return (
     <div>
-       <div className="char-cards">
+  <div className=''>
+  <div className="mb-6 max-w-[400px] mx-auto">
+  <label htmlFor="username-success" className="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Character Name</label>
+  <input type="text" id="username-success" className="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-green-100 dark:border-green-400" placeholder="Morty Smith" />
+  <p className="mt-2 text-sm text-green-600 dark:text-green-500"><span className="font-medium">Alright!</span> Character Name available!</p>
+</div>
+  </div>
+       <div className="max-w-[700px]  overflow-y-auto my-2 gap-x-32 gap-y-2 bg-gray-700 mx-auto grid grid-cols-2">
 {charList}
   </div>
     </div>
