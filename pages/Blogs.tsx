@@ -36,21 +36,24 @@ function nextPage() {
   function goToPage(num: any) {
   setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`)
   }
-if (loading) return "Loading..."
-const charList = characters.map((char : any) => <Characters  key={Math.floor(Math.random() * 990000)} name={char.name} img={char.image} />)
+if (loading) return (<>
+<div className='bg-gray-400 h-screen align-center items-center justify-center flex'>
+ <p className='bg-gray-100 px-32 py-32'>Loading........</p>
+</div>
+</>)
+const charList = characters.map((char : any) => <Characters  key={Math.floor(Math.random() * 990000)} name={char.name} img={char.image} status={char.status}/>)
   return (
     <div>
   <div className=''>
-  <div className="mb-6 max-w-[400px] mx-auto">
-  <label htmlFor="username-success" className="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Character Name</label>
-  <input type="text" id="username-success" className="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-green-100 dark:border-green-400" placeholder="Morty Smith" />
-  <p className="mt-2 text-sm text-green-600 dark:text-green-500"><span className="font-medium">Alright!</span> Character Name available!</p>
+  <div className="max-w-[900px] mx-auto">
+  <input type="text" id="username-success" className="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-green-100 dark:border-green-400" placeholder="Glasses Morty" />
 </div>
+
   </div>
   <div className=''>
     <Pagination nextPage={nextPageUrl ? nextPage : null} prevPage={prevPageUrl ? prevPage : null} goToPage={goToPage} pages={pages} />
   </div>
-       <div className="max-w-[700px]  overflow-y-auto my-2 gap-x-32 gap-y-2 bg-gray-700 mx-auto grid grid-cols-2">
+       <div className="max-w-[900px] shadow-lg rounded-md overflow-y-auto  gap-x-32 gap-y-2 bg-gray-200 mx-auto grid grid-cols-2">
 {charList}
   </div>
   <div className=''>

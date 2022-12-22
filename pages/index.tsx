@@ -16,8 +16,8 @@ export default function Home({data}: {data:any}) {
        <link rel="icon" href="/favicon.ico" />
      </Head>
      <p>
-       <div className='bg-black   py-8 flex justify-center text-white text-bold text-2xl'>Rick and Morty</div>
-   <div className='container bg-red-900 h-[100%] mx-auto'>
+       <div className='bg-green-200 shadow-2xl border-none my-1 cursor-pointer   py-8 flex justify-center text-white text-bold text-2xl'>Rick and Morty</div>
+   <div className='container bg-wheat-100 h-[100%] mx-auto'>
    <Blogs />
     </div>  
      </p>
